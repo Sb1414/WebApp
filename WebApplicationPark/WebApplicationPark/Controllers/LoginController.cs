@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApplicationPark.Models;
 
 namespace WebApplicationPark.Controllers
 {
@@ -7,6 +8,16 @@ namespace WebApplicationPark.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Check(Login login)
+        {
+            if (ModelState.IsValid)
+            {
+                return Redirect("/");
+            }
+            return View("Index");
         }
     }
 }

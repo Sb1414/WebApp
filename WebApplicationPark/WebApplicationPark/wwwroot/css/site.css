@@ -42,6 +42,57 @@ nav a {
     color: #fff;
 }
 
+main {
+    max-width: 400px; /* Ограничение максимальной ширины формы */
+    margin: 0 auto; /* Центрирование формы по горизонтали */
+    padding: 20px;
+    background: #f4f4f4; /* Фон формы */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Тень вокруг формы */
+}
+
+    main label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    main input:not([type="submit"]) {
+        width: 100%;
+        padding: 10px 14px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-top: 7px;
+    }
+
+        main input:not([type="submit"]):focus {
+            border: 1px solid #ff0000;
+        }
+
+    main input[type="submit"] {
+        width: 100%;
+        padding: 10px 0px;
+        text-align: center;
+        border-radius: 5px;
+        border: 0;
+        margin-top: 7px;
+        background: #45109a;
+        font-weight: bold;
+        color: azure;
+        cursor: pointer;
+    }
+
+        main input[type="submit"]:hover {
+            background: #400b94;
+        }
+
+    main form span {
+        color: #ff0000;
+        font-weight: bold;
+        display: block;
+        margin: 5px 0;
+    }
+
 html {
     position: relative;
     min-height: 100%;
