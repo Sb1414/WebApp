@@ -1,4 +1,8 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿const logo = document.getElementById('logo');
+logo.addEventListener('mouseover', () => {
+    logo.style.transform = 'rotate(360deg)';
+});
 
-// Write your JavaScript code.
+logo.addEventListener('mouseout', () => {
+    logo.style.transform = 'rotate(0deg)';
+});
