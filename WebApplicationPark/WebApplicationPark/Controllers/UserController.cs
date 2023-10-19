@@ -3,7 +3,7 @@ using WebApplicationPark.Models;
 
 namespace WebApplicationPark.Controllers
 {
-    public class LoginController : Controller
+    public class UserController : Controller
     {
         public IActionResult Index()
         {
@@ -11,7 +11,7 @@ namespace WebApplicationPark.Controllers
         }
 
         [HttpPost]
-        public IActionResult Check(Login login)
+        public IActionResult Check(User user)
         {
             if (ModelState.IsValid)
             {

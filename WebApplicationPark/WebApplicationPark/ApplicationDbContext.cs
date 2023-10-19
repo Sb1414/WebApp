@@ -9,6 +9,6 @@ namespace WebApplicationPark
         {
         }
 
-        public DbSet<Login> Logins { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

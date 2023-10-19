@@ -1,4 +1,4 @@
-﻿@model Login
+﻿@model User
 @{
     ViewData["Title"] = "Логин";
 }
@@ -7,7 +7,7 @@
     <h1>Войти на сайт</h1>
 </div>
 
-<form method="post" asp-asp-controller="Login" asp-action="Check">
+<form method="post" asp-asp-controller="User" asp-action="Check">
     <label asp-for="login">Логин</label>
     <input asp-for="login" />
     <span asp-asp-validation-for="login"></span>
