@@ -1,10 +1,21 @@
-﻿namespace WebApplicationPark.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WebApplicationPark.Models;
 
 public class Employees
 {
-    public int id { get; set; }
-    private string firstName, lastName, dateOfBirth, position;
-    private int salary;
+    public int Id { get; set; }
+    
+    private string login, password, firstName, lastName, dateOfBirth;
+    public string Password { 
+        get { return password; }
+        set { password = value; } 
+    }
+    public string Login
+    {
+        get { return login; }
+        set { login = value; }
+    }
 
     public string FirstName
     {
@@ -23,25 +34,13 @@ public class Employees
         set { dateOfBirth = value; }
     }
 
-    public string Position
-    {
-        get { return position; }
-        set { position = value; }
-    }
-
-    public int Salary
-    {
-        get { return salary; }
-        set { salary = value; }
-    }
-
     public Employees() { }
-    public Employees(string firstName, string lastName, string dateOfBirth, string position, int salary)
+    public Employees(string login, string password, string firstName, string lastName, string dateOfBirth)
     {
+        this.login = login;
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
-        this.position = position;
-        this.salary = salary;
     }
 }

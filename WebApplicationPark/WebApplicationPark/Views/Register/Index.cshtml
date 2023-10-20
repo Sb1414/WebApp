@@ -1,0 +1,32 @@
+﻿@model Employees
+@{
+    ViewData["Title"] = "Регистрация";
+}
+
+<div class="text-center">
+    <h1>Войти на сайт</h1>
+</div>
+
+<form method="post" asp-asp-controller="Register" asp-action="Check">
+    <label asp-for="FirstName">Имя</label>
+    <input asp-for="FirstName" />
+    <span asp-asp-validation-for="FirstName"></span>
+
+    <label asp-for="LastName"></label>
+    <input asp-for="LastName" />
+    <span asp-asp-validation-for="LastName"></span>
+
+    <label asp-for="DateOfBirth"></label>
+    <input asp-for="DateOfBirth" />
+    <span asp-asp-validation-for="DateOfBirth"></span>
+
+    <label asp-for="Login">Логин</label>
+    <input asp-for="Login" />
+    <span asp-asp-validation-for="login"></span>
+
+    <label asp-for="Password"></label>
+    <input asp-for="Password" />
+    <span asp-asp-validation-for="password"></span>
+
+    <input type="submit" value="Войти" />
+</form>
