@@ -26,7 +26,7 @@ namespace WebApplicationPark.Controllers
 
             if (existingUser != null && existingUser.Password != user.Password)
             {
-                ModelState.AddModelError("password", "Неверный пароль");
+                // ModelState.AddModelError("password", "Неверный пароль");
                 return View("Index");
             }
 
