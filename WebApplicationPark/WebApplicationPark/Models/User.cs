@@ -5,14 +5,13 @@ namespace WebApplicationPark.Models
     public class User
     {
         [Key]
-        private int id { get; set; }
-
+        public int Id { get; set; }
         [Display(Name = "Введите логин")]
         [Required(ErrorMessage ="Нужно ввести логин")]
-        public string login { get; set; }
+        public string Login { get; set; }
 
         [Display(Name = "Введите пароль")]
         [Required(ErrorMessage = "Нужно ввести пароль")]
-        public string password { get; set; }
+        public string Password { get; set; }
     }
 }

@@ -13,7 +13,7 @@ builder.Services.AddControllersWithViews();
 
 var configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("appsettings.json")
+    .AddJsonFile("dbsettings.json")
     .Build();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
