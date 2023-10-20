@@ -7,7 +7,7 @@
     <h1>Войти на сайт</h1>
 </div>
 
-<form method="post" asp-asp-controller="Register" asp-action="Check">
+<form method="post" asp-asp-controller="Registration" asp-action="Check1">
     <label asp-for="FirstName">Имя</label>
     <input asp-for="FirstName" />
     <span asp-asp-validation-for="FirstName"></span>
@@ -22,11 +22,11 @@
 
     <label asp-for="Login">Логин</label>
     <input asp-for="Login" />
-    <span asp-asp-validation-for="login"></span>
+    <span asp-asp-validation-for="Login"></span>
 
     <label asp-for="Password"></label>
     <input asp-for="Password" />
-    <span asp-asp-validation-for="password"></span>
+    <span asp-asp-validation-for="Password"></span>
 
-    <input type="submit" value="Войти" />
+    <input type="submit" value="Зарегистрироваться" />
 </form>

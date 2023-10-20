@@ -32,8 +32,8 @@ namespace WebApplicationPark.Controllers
 
             else if (existingUser == null)
             {
-                ModelState.AddModelError("login", "Пользователь с таким логином и паролем не найден.");
-                return RedirectToAction("Register");
+                // ModelState.AddModelError("login", "Пользователь с таким логином и паролем не найден.");
+                return RedirectToAction("Index", "Registration");
             }
 
             else
