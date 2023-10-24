@@ -31,4 +31,6 @@ public class Employees
     [Display(Name = "введите дату рождения")]
     public string DateOfBirth { get; set; }
 
+    public int PositionID { get; set; }
+
 }
