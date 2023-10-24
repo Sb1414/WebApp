@@ -12,6 +12,7 @@ namespace WebApplicationPark
         public DbSet<Employees> Employees { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Attraction> Attractions { get; set; }
-        public DbSet<Shift> Shifts { get; set; }
+        public DbSet<Positions> Positions { get; set; }
+        public DbSet<TicketSales> TicketSales { get; set; }
     }
 }
