@@ -19,8 +19,8 @@ namespace WebApplicationPark.Controllers
         [HttpPost]
         public IActionResult Check(Employees user)
         {
-            if (!ModelState.IsValid)
-                return View("Index");
+            // if (!ModelState.IsValid)
+            //    return View("Index");
 
             var existingUser = _context.Employees.FirstOrDefault(u => u.Login == user.Login && u.Password == user.Password);
 
