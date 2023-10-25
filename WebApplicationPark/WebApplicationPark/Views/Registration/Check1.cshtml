@@ -1,3 +1,4 @@
-﻿<div class="text-center">
-    <h1>Все ок?</h1>
-</div>
+﻿@if (ViewBag.ErrorMessage != null)
+{
+	<h1>@ViewBag.ErrorMessage</h1>
+}

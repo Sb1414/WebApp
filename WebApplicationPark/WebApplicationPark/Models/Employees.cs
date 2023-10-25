@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApplicationPark.Models;
 
@@ -10,6 +11,7 @@ public class Employees
     [Required(ErrorMessage ="введите логин")]
     [Display(Name = "введите логин")]
     [StringLength(100, MinimumLength = 3)]
+    [Remote(action: "VerifyLogin", controller: "Employees")]
     public string Login { get; set; }
 
     [Required(ErrorMessage = "введите пароль")]

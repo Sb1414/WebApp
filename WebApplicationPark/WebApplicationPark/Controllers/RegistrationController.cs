@@ -17,6 +17,13 @@ namespace WebApplicationPark.Controllers
             return View();
         }
 
+        public JsonResult VerifyLogin(string login)
+        {
+            var exists = _context.Employees.Any(x => x.Login == login);
+
+            return Json(!exists);
+        }
+
         [HttpPost]
         public IActionResult Check1(Employees model)
         {
@@ -29,8 +36,9 @@ namespace WebApplicationPark.Controllers
 
                     if (existingUser != null)
                     {
-                        ModelState.AddModelError("login", "Пользователь с таким логином уже существует.");
-                        return View(model);
+                        ViewBag.ErrorMessage = "Пользователь с таким логином уже существует.";
+
+                        return View();
                     }
 
                     // Создание нового пользователя
