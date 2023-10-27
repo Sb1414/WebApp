@@ -1,7 +1,32 @@
-﻿@{
-    ViewData["Title"] = "Главная страница сайта";
+﻿
+
+@model List<WebApplicationPark.Models.Employees>
+
+@{
+    ViewData["Title"] = "Список пользователей";
 }
 
-<div class="text-center">
-    <h1>Это главная</h1>
-</div>
+<h2>Список пользователей</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Дата рождения</th>
+            <!-- Другие поля, которые вы хотите отобразить -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.DateOfBirth</td>
+                <!-- Другие поля, которые вы хотите отобразить -->
+            </tr>
+        }
+    </tbody>
+</table>
+

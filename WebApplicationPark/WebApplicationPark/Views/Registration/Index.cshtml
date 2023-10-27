@@ -8,30 +8,31 @@
 </div>
 
 <form method="post" asp-asp-controller="Registration" asp-action="Check1">
+    @Html.AntiForgeryToken()
     <label asp-for="FirstName">Имя</label>
-    <input asp-for="FirstName" />
-    <span asp-asp-validation-for="FirstName"></span>
+    <input asp-for="FirstName"/>
+    <span class="text-danger">@ViewData["FirstNameError"]</span>
+    <span asp-validation-for="FirstName"></span>
 
-    <label asp-for="LastName"></label>
-    <input asp-for="LastName" />
-    <span asp-asp-validation-for="LastName"></span>
+    <label asp-for="LastName">Фамилия</label>
+    <input asp-for="LastName"/>
+    <span asp-validation-for="LastName"></span>
 
-    <label asp-for="DateOfBirth"></label>
-    <input asp-for="DateOfBirth" />
+    <label asp-for="DateOfBirth">Дата рождения</label>
+    <input asp-for="DateOfBirth" type="date" />
     <span asp-asp-validation-for="DateOfBirth"></span>
 
     <label asp-for="Login">Логин</label>
-    <input asp-for="Login" />
-    <span asp-asp-validation-for="Login"></span>
+    <input asp-for="Login"/>
+    <span asp-validation-for="Login"></span>
 
-    <label asp-for="Password"></label>
-    <input asp-for="Password" />
-    <span asp-asp-validation-for="Password"></span>
+    <label asp-for="Password">Пароль</label>
+    <input asp-for="Password"/>
+    <span asp-validation-for="Password"></span>
 
-    <label asp-for="PositionID"></label>
-    <input asp-for="PositionID" />
+    <label asp-for="PositionID">Позиция</label>
+    <input asp-for="PositionID"/>
     <span asp-asp-validation-for="PositionID"></span>
 
-
-    <input type="submit" value="Зарегистрироваться" />
+    <input type="submit" value="Зарегистрироваться"/>
 </form>
