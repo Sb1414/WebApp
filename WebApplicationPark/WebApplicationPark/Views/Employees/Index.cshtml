@@ -7,14 +7,19 @@
     <h1>Войти на сайт</h1>
 </div>
 
-<form method="post" asp-asp-controller="Employees" asp-action="Check">
+<form method="post" asp-controller="Employees" asp-action="Check">
     <label asp-for="Login">Логин</label>
     <input asp-for="Login" />
-    <span asp-asp-validation-for="login"></span>
+    <span asp-validation-for="Login"></span>
 
-    <label asp-for="Password"></label>
-    <input asp-for="Password" />
-    <span asp-asp-validation-for="password"></span>
+    <label asp-for="Password">Пароль</label>
+    <input asp-for="Password" value="@ViewData["PasswordValue"]" />
+    @if (ViewData.ContainsKey("PasswordError"))
+    {
+        <span class="text-danger">@ViewData["PasswordError"]</span>
+    }
+    <span asp-validation-for="Password"></span>
+
 
     <input type="submit" value="Войти" />
 </form>

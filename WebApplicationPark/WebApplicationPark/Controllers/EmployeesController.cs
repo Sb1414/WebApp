@@ -21,12 +21,16 @@ namespace WebApplicationPark.Controllers
         {
             // if (!ModelState.IsValid)
             //    return View("Index");
+            ViewData["PasswordValue"] = user.Password; // Устанавливаем значение пароля, чтобы его сохранить
 
             var existingUser = _context.Employees.FirstOrDefault(u => u.Login == user.Login && u.Password == user.Password);
+            var passError = _context.Employees.FirstOrDefault(u => u.Login == user.Login && u.Password != user.Password);
 
-            if (existingUser != null && existingUser.Password != user.Password)
+            if (passError != null)  
             {
-                // ModelState.AddModelError("password", "Неверный пароль");
+                //ModelState.AddModelError("Password", "Неверный пароль");
+                //return View(user);
+                ViewData["PasswordError"] = "Пароль неверный.";
                 return View("Index");
             }
 

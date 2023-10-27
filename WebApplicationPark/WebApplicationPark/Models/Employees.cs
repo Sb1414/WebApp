@@ -16,7 +16,7 @@ public class Employees
 
     [Required(ErrorMessage = "введите пароль")]
     [Display(Name = "введите пароль")]
-    [StringLength(100, MinimumLength = 6)]
+    [StringLength(50, MinimumLength = 2)]
     public string Password { get; set; }
 
     [Required(ErrorMessage = "введите имя")]
