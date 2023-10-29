@@ -11,10 +11,21 @@
 <body>
     <header>
         <span class="logo">Sb</span>
+        @if (AppSession.IsLoggedIn)
+        {
+            <span>Добро пожаловать, @AppSession.UserLogin</span>
+        }
         <nav>
-            <a href="/">Главная</a>
-            <a href="/Employees">Войти</a>
-            <a href="/Registration">Регистрация</a>
+            <a asp-action="Index" asp-controller="Home">Главная</a>
+            @if (AppSession.IsLoggedIn)
+            {
+                <a asp-action="Logout" asp-controller="Employees">Выйти</a>
+            }
+            else
+            {
+                <a asp-action="Index" asp-controller="Employees">Войти</a>
+            }
+            <a asp-action="Index" asp-controller="Registration">Регистрация</a>
         </nav>
     </header>
     <main role="main" class="pb-3">
