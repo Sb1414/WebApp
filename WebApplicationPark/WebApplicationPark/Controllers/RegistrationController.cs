@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using WebApplicationPark.Models;
 
 namespace WebApplicationPark.Controllers
@@ -14,7 +15,14 @@ namespace WebApplicationPark.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Positions = new SelectList(_context.Positions, "Position", "Position");
             return View();
+        }
+        
+        public IActionResult GetPositions()  
+        {
+            var positions = _context.Positions.ToList();
+            return Json(positions);
         }
 
         public JsonResult VerifyLogin(string login)
@@ -39,6 +47,14 @@ namespace WebApplicationPark.Controllers
                 
                 // Проверка, существует ли пользователь с таким же логином
                 var existingUser = _context.Employees.FirstOrDefault(u => u.Login == model.Login);
+                
+                var positionName = model.Position.Position;
+                var position = _context.Positions.FirstOrDefault(p => p.Position == positionName);
+                var positionId = position.id;
+                
+                Console.WriteLine("\n\n =====  positionName ===== >>>>  : " + positionName + " <<< ===== positionName\n\n");
+                Console.WriteLine("\n\n =====  position ===== >>>>  : " + position + " <<< ===== position\n\n");
+                Console.WriteLine("\n\n =====  positionId ===== >>>>  : " + positionId + " <<< ===== positionId\n\n");
 
                 if (existingUser != null)
                 {
@@ -55,7 +71,7 @@ namespace WebApplicationPark.Controllers
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     DateOfBirth = model.DateOfBirth,
-                    PositionID = model.PositionID
+                    PositionID = positionId
                 };
                 
                 // Добавление пользователя в базу данных
