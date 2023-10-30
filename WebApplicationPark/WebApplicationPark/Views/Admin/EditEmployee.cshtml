@@ -1,0 +1,27 @@
+@model WebApplicationPark.Models.Employees
+
+<form asp-action="SaveEmployee" asp-controller="Admin">
+    <input asp-for="Id" type="hidden" />
+    
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" />
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" />
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="DateOfBirth"></label>
+        <input asp-for="DateOfBirth" class="form-control" />
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="PositionID"></label>
+        <input asp-for="PositionID" class="form-control" />
+    </div>
+    
+    <button type="submit" asp-controller="Admin" asp-action="SaveEmployee"  class="btn btn-primary">Сохранить</button>
+</form>

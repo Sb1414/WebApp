@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Дата рождения</th>
+        <th>Должность</th>
+        <th>Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var employee in Model)
+    {
+        <tr>
+            <td>@employee.FirstName</td>
+            <td>@employee.LastName</td>
+            <td>@employee.DateOfBirth.ToShortDateString()</td>
+            <td>@employee.Position</td>
+            <td>
+                <a asp-controller="Admin" asp-action="EditEmployee" asp-route-id="@employee.Id">Изменить</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+
