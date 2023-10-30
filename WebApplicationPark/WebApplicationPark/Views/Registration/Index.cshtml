@@ -30,9 +30,11 @@
     <input asp-for="Password"/>
     <span asp-validation-for="Password"></span>
 
-    <label asp-for="PositionID">Позиция</label>
-    <input asp-for="PositionID"/>
-    <span asp-asp-validation-for="PositionID"></span>
+   <label asp-for="Position.Position">Позиция</label>
+    <select asp-for="Position.Position" asp-items="ViewBag.Positions" class="form-control">
+           <option value="">Выберите позицию</option>
+       </select>
+   <span asp-validation-for="Position.Position"></span>
 
     <input type="submit" value="Зарегистрироваться"/>
 </form>
