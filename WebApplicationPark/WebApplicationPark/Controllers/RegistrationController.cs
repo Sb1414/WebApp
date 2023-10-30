@@ -38,23 +38,12 @@ namespace WebApplicationPark.Controllers
         {
             try
             {
-                if(!ModelState.IsValid)
-                {
-                    // ViewData["FirstNameError"] = "Ошибка ввода имени";
-                    return View("Index");
-                    // return View(model); 
-                }
-                
                 // Проверка, существует ли пользователь с таким же логином
                 var existingUser = _context.Employees.FirstOrDefault(u => u.Login == model.Login);
                 
                 var positionName = model.Position.Position;
                 var position = _context.Positions.FirstOrDefault(p => p.Position == positionName);
                 var positionId = position.id;
-                
-                Console.WriteLine("\n\n =====  positionName ===== >>>>  : " + positionName + " <<< ===== positionName\n\n");
-                Console.WriteLine("\n\n =====  position ===== >>>>  : " + position + " <<< ===== position\n\n");
-                Console.WriteLine("\n\n =====  positionId ===== >>>>  : " + positionId + " <<< ===== positionId\n\n");
 
                 if (existingUser != null)
                 {

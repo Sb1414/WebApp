@@ -51,11 +51,14 @@ namespace WebApplicationPark.Controllers
                 // ModelState.AddModelError("login", "Пользователь с таким логином и паролем не найден.");
                 return RedirectToAction("Index", "Registration");
             }
-
             else
             {
                 AppSession.IsLoggedIn = true;
                 AppSession.UserLogin = user.Login;
+                if (existingUser.Login == "admin")
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
                 return RedirectToAction("Index", "Home");
             }
         }
