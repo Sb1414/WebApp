@@ -34,7 +34,7 @@ public class Employees
     [Display(Name = "Дата рождения")]
     [DataType(DataType.Date)]
     public DateTime DateOfBirth { get; set; }
-
     public int PositionID { get; set; }
+    public Positions Position { get; set; }
 
 }
