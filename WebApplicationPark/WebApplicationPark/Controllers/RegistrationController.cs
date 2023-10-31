@@ -38,6 +38,13 @@ namespace WebApplicationPark.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    ViewBag.Positions = new SelectList(_context.Positions, "Position", "Position");
+                    Console.WriteLine("\n\n\nне валидно\n\n\n");
+                    return View("Index", model);
+                }
+                Console.WriteLine("\n\n\n ========= ушел дальше даже ========= \n\n\n");
                 // Проверка, существует ли пользователь с таким же логином
                 var existingUser = _context.Employees.FirstOrDefault(u => u.Login == model.Login);
                 
