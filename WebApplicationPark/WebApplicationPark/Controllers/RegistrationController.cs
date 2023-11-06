@@ -55,7 +55,6 @@ namespace WebApplicationPark.Controllers
                 if (existingUser != null)
                 {
                     ViewBag.ErrorMessage = "Пользователь с таким логином уже существует.";
-
                     return View();
                 }
 
