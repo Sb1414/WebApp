@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace WebApplicationPark.Models;
 
@@ -35,6 +36,8 @@ public class Employees
     [DataType(DataType.Date)]
     public DateTime DateOfBirth { get; set; }
     public int PositionID { get; set; }
+    
+    [BindNever]
     public Positions Position { get; set; }
 
 }
